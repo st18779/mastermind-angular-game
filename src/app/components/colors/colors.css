@@ -1,0 +1,58 @@
+
+div{
+    display: flex;
+    gap: 30px;
+    padding: 20px; 
+    border: none; 
+    border-radius: 20px; 
+    margin-bottom: 20px;
+    
+    
+    background-color: #e0e0e0; 
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), 
+                -6px -6px 12px rgba(255, 255, 255, 0.9); 
+
+}
+button{
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%; 
+    border: none; 
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    padding: 0;
+
+
+}
+button:hover {
+    transform: scale(1.08); 
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3),
+                -6px -6px 12px rgba(255, 255, 255, 1);
+}
+
+button:active {
+    transform: scale(1.03); 
+ 
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2), 
+                inset -3px -3px 6px rgba(255, 255, 255, 0.7);
+}
+#red{
+    background-color: rgb(228, 11, 11);
+}
+#light-blue{
+    background-color:  rgb(30, 216, 216);
+}
+#purple{
+    background-color: rgba(189, 27, 189, 0.836);
+}
+#pink{
+    background-color: rgb(245, 83, 151);
+}
+
+#green{
+    background-color: rgb(10, 197, 66);
+}
+
+#yellow{
+    background-color: rgba(196, 199, 14, 0.76);
+}

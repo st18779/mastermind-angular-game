@@ -1,0 +1,8 @@
+
+
+<div id="colors">
+    @for(c of colorsArr; track $index){
+        <button [ngStyle]="{'background-color':c}" (click)="change(c)"></button>
+    }
+ 
+</div>

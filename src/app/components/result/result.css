@@ -1,0 +1,16 @@
+
+
+#context{
+    display: flex;
+    flex-direction: row;
+    margin-right: 200px;
+    
+}
+.b{
+    width: 20px;
+    height:20px;
+    border-radius: 100%;
+    border: solid 1px black;
+    margin-right: 10px;
+    
+}

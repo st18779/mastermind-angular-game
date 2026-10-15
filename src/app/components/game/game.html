@@ -1,0 +1,57 @@
+<h1>משחק בול פגיעה</h1>
+<div id="container">
+
+
+  <div id="rules">
+    <button id="rule" (click)="chStatus()">{{rulesButtonText}}</button>
+    @if(rule){
+      <div id="seeRules">
+        <h3>הוראות המשחק</h3>
+        <h5>בתחילת המשחק מוגרלים 4 מספרים,</h5>
+        <h5>עליך לנחש מהם ארבעת הצבעים ואת מיקומם.</h5>
+        <h5>על המקום שאתה רוצה למלא ואז על הצבע שאתה חושב,</h5>
+        <h5>שים לב במשחק זה באפשרותך לבחור כל צבע מספר פעמים</h5>
+        <h5>חשבן את צעדיך בתבונה,ברשותך 10 נסיונות בלבד!</h5>
+        <h5>בסיום כל נסיון עליך ללחוץ על כפתור "סימתי" ואז יוצגו לפניך התוצאות של נסיון זה</h5>
+        <h5>בול: הצבע נכון והמקום נכון🟡</h5>
+        <h5>פגיעה: הצבע קיים אך לא במיקום🔴</h5>
+        <h5>כלום: הצבע לא קיים ⚪</h5>
+        <h5>מטרת המשחק: לגלות את ארבעת הצבעים במיקום הנכון במספר קטן של נסיונות</h5>
+        <h4>משחק מהנה!🥰</h4>
+      </div>
+    }
+  </div>
+  
+  <div>
+    <app-colors (changeColor)="getColorFromColors($event)"></app-colors>
+    <div id="divush">
+      @for(line of board;track $index;let i=$index){
+
+      <app-line id="line" [selectedColor]="selectedColor" [(curStep)]="curStep" [numStep]=i
+        [randomColorsArr]="randomColorsArr" (winner)="wining($event)" ></app-line>
+      }
+    </div>
+    @if(theWin){
+      <div class="win">
+        <div class="winMessage" >
+          <div class=confetti-container></div>
+          <h1>!!!!win</h1>
+          <button (click)="newGame()">שחק שוב</button>
+        </div>
+      </div>
+      }
+
+    @if(curStep==10){
+    <div id="result">
+      <h1>אופסססס,נגמרו לך מספר הנסיונות😪</h1>
+      <h1>לא נורא אולי בפעם הבאה....</h1>
+       <button id="btnNew"(click)="newGame()">שחק שוב</button>
+    </div>
+    }
+
+
+
+  </div>
+
+
+</div>

@@ -1,0 +1,22 @@
+
+
+<div id="board">
+   
+    @for(g of gusseArr;track $index;let i=$index){
+            
+        <button (click)="upCurButton(i)" [ngStyle]="curStep==numStep && curButton==i ?{'background-color':g,'border':'solid black 4px'}:{'background-color':g}" [disabled]="curStep!=numStep" ></button>
+
+    }
+    @if(curStep==numStep){
+            <button id="isFinish" [disabled]="!isArrFull()" (click)="finish()" >סימתי</button>
+        }
+    
+    
+        @if(finishStep){
+        <app-result [gusseArr]="gusseArr" [randomColorsArr]="randomColorsArr" (win)="setisWin($event)"></app-result>
+    }
+    
+   
+
+    
+</div>
